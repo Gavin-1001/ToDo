@@ -1,10 +1,21 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+    selector: 'app-header',
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
 
+    title = 'Task Tracker';
+
+    constructor() {
+    }
+
+    ngOnInit(): void {
+    }
+
+    toggleAddTask() {
+        console.log("TOGGLE")
+    }
 }
