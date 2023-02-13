@@ -14,4 +14,9 @@ export class TaskItemComponent {
 
     faTimes = faTimes;
 
+    onDelete(task:Task){
+        console.log(task);
+    }
+
+
 }
