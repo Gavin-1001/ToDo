@@ -26,4 +26,8 @@ export class TaskService {
         return this.httpClient.get<Task[]>(`${this.baseUrl}/getAllTasks`);
         //the issue I was having was I needed to add /getAllTasks at the end of the get
     }
+
+    deleteTask(task: Task){
+        return this.httpClient.delete<Task>(`${this.baseUrl}/deleteTask/${task.id}`);
+    }
 }
