@@ -1,4 +1,5 @@
-<div class="task">
+<!-- reminder<if the task.reminder is true use the style of reminder from the css> -->
+<div [ngClass]="{reminder: task.reminder}" class="task" (dblclick)="onToggle(task)">
     <h3>{{task.text}} <fa-icon
         (click)="onDelete(task)"
         [icon]="faTimes"
