@@ -17,12 +17,12 @@ export class TasksComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.taskService.getTasks().subscribe((tasks) =>(
+        this.taskService.getTasks().subscribe((tasks) => (
             this.tasks = tasks));
     }
 
-    deleteTask(task: Task){
-        this.taskService.deleteTask(task).subscribe(()=> (
+    deleteTask(task: Task) {
+        this.taskService.deleteTask(task).subscribe(() => (
             this.tasks = this.tasks.filter((t) => t.id !== task.id)
         ));
     }
@@ -31,5 +31,12 @@ export class TasksComponent implements OnInit {
         task.reminder = !task.reminder; //sets it to the opposite of what the reminder is
         console.log(task.reminder);
         this.taskService.updateTaskReminder(task).subscribe();
+    }
+
+    addTask(task: Task) {
+        console.log(task);
+        this.taskService.addTask(task).subscribe((task) => (
+            this.tasks.push(task)
+        ));
     }
 }

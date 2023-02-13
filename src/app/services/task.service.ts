@@ -42,4 +42,8 @@ export class TaskService {
         return this.httpClient.put<Task>(`${this.baseUrl}/updateTask/${task.id}`, task);
     }
 
+    addTask(task:Task):Observable<Task>{
+        return this.httpClient.post<Task>(`${this.baseUrl}/createTask`, task);
+    }
+
 }
